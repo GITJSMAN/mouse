@@ -1,0 +1,1506 @@
+
+<!--=====================加载===================================================-->
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文字特效</title>
+    <style>
+        /****loading加载*****/
+        .loading_cover{
+            width: 100%;
+            height:100%;
+            position: fixed;
+            z-index:999;
+            background: #f5f5f9;
+        }
+        /****圆形加载****/
+        @keyframes moveover {
+            0%   {transform:rotate(0deg);}
+            100% {transform:rotate(360deg);}
+        }
+        .box{
+            position:relative;
+            width:100px;
+            height:100px;
+            /*整体旋转*/
+            animation:moveover 3s linear infinite;
+            margin:-110px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .box1{
+            position:absolute;
+            width: 50px;
+            height: 100px;
+            border-radius:50px 0 0 50px;
+            /* 起始最深颜色为 #999，过渡到中间颜色为 #d0cfcf */
+            background: linear-gradient(#999, #008ED9);
+            background-color: red;
+            z-index:2;
+        }
+        .box2{
+            position:absolute;
+            width: 50px;
+            height: 100px;
+            border-radius:0 50px 50px 0;
+            left:50%;
+            /* 过渡到中间颜色为 #d0cfcf 最终末尾颜色为 #eee */
+            background: linear-gradient(#eee,#008ED9);
+            z-index:1;
+        }
+        .box3{
+            position:absolute;
+            width:92px;
+            height:92px;
+            top:4px;
+            left:4px;
+            border-radius:50%;
+            background-color: #fff;
+            z-index:2;
+        }
+        .box-font{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            margin: 10px auto;
+            text-align: center;
+            line-height: 100px;
+            z-index: 999;
+            font-size: 1.2rem;
+            color:#E9ECED;
+        }
+
+        /*文字上色*/
+        .box-font::before{
+            content:attr(data-letters);
+            position:absolute;
+            width:0;
+            z-index:2;
+            color:#008ED9;
+            overflow:hidden;
+            white-space: nowrap;
+            animation:textToColor 1.5s linear infinite;
+            animation-fill-mode:forwards;
+            -webkit-animation-fill-mode:forwards;
+            -moz-animation-fill-mode:forwards;
+        }
+        @keyframes textToColor{
+            0%{
+                width:0;
+            }
+            100%{
+                width:56%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="loading_cover">
+    <div class="box-font" data-letters="加载中">加载中</div>
+    <div class='box'>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</div>
+</body>
+</html>-->
+<!--=====================小青蛙===================================================-->
+<!--
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>纯CSS3绘制绿色小螃蟹</title>
+    <style type="text/css">
+        .box{
+            position: relative;
+            top: 50px;
+        }
+        .crab{
+            position: relative;
+            width: 534px;
+            height: 457px;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+        .front-paws-left{
+            position: absolute;
+            top: 90px;
+            left: 5px;
+        }
+        .front-pl-left{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width:92px;
+            height:50px;
+            border-radius:50px 50px 10px 10px;
+            border: 8px solid #080A07;
+            background: #41914A;
+            -webkit-transform: rotate(-95deg);
+            transition: all .5s;
+        }
+        .front-pl-right{
+            position: absolute;
+            top: 33px;
+            left: 80px;
+            width:58px;
+            height:35px;
+            border-radius:35px 35px 10px 10px;
+            border: 8px solid #080A07;
+            background: #41914A;
+            -webkit-transform: rotate(105deg);
+            transition: all .5s;
+        }
+
+        .front-pl-down{
+            position: absolute;
+            top: 85px;
+            left: 75px;
+            width: 65px;
+            height: 35px;
+            background: transparent;
+            border: 8px solid;
+            border-color: transparent transparent #080A07 #080A07;
+            border-radius: 5px;
+            -webkit-transform: rotate(15deg);
+        }
+        .front-paws-right{
+            position: absolute;
+            top: 8px;
+            left: 215px;
+        }
+        .front-pr-left{
+            position: absolute;
+            top: 30px;
+            left: 200px;
+            width:92px;
+            height:50px;
+            border-radius:50px 50px 10px 10px;
+            border: 8px solid #080A07;
+            background: #41914A;
+            -webkit-transform: rotate(90deg);
+            transition: all .5s;
+        }
+        .front-pr-right{
+            position: absolute;
+            top: 63px;
+            left: 153px;
+            width:58px;
+            height:35px;
+            border-radius:35px 35px 10px 10px;
+            border: 8px solid #080A07;
+            background: #41914A;
+            -webkit-transform: rotate(-105deg);
+            transition: all .5s;
+        }
+
+        .front-pr-down{
+            position: absolute;
+            top: 130px;
+            left: 125px;
+            width: 100px;
+            height: 35px;
+            background: transparent;
+            border: 8px solid;
+            border-color: transparent #080A07 #080A07 transparent;
+            border-radius: 5px;
+            -webkit-transform: rotate(-30deg);
+        }
+        .belly{
+            position: absolute;
+            top: 170px;
+            left: 90px;
+            width: 325px;
+            height: 200px;
+            border-radius:210px 210px 50px 50px;
+            border: 8px solid #080A07;
+            background: #8AE34C;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .belly-con{
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 309px;
+            height: 147px;
+            border-radius: 400px 400px 10px 10px;
+            border: 8px solid transparent;
+            background: #fff;
+        }
+        .mouth{
+            position: absolute;
+            bottom: 20px;
+            left: 98px;
+            width: 100px;
+            height: 80px;
+            border: 8px solid;
+            border-color: transparent #080A07 #080A07 #080A07;
+            border-radius: 82px 82px 100px 100px;
+        }
+        .eye{
+            position: absolute;
+            top: 110px;
+            left: 168px;
+        }
+        .eye-left{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 55px;
+            height: 55px;
+            border: 8px solid #080A07;
+            border-radius: 50%;
+            background: #fff;
+            transition: all .5s;
+        }
+        .eye-right{
+            position: absolute;
+            top: 0;
+            left: 120px;
+            width: 55px;
+            height: 55px;
+            border: 8px solid #080A07;
+            border-radius: 50%;
+            background: #fff;
+            transition: all .5s;
+        }
+
+        .eye-l-black{
+            position: absolute;
+            top: 0;
+            left: 20px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #080A07;
+        }
+        .eye-l-white{
+            position: absolute;
+            top: 5px;
+            left: 36px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #fff;
+        }
+        .eye-r-black{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #080A07;
+        }
+        .eye-r-white{
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #fff;
+        }
+        .little-paws{
+            position: absolute;
+            top: 220px;
+            left: 30px;
+        }
+        .little-paws-left{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .little-pl-one{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .little-plo-left{
+            position: absolute;
+            top: 2px;
+            left: -2px;
+            width: 8px;
+            height: 40px;
+            background: #080A07;
+            border-radius: 10px;
+            -webkit-transform: rotate(50deg);
+        }
+        .little-plo-right{
+            position: absolute;
+            top: -14px;
+            left: 45px;
+            width: 8px;
+            height: 75px;
+            background: #080A07;
+            border-radius: 10px;
+            -webkit-transform: rotate(110deg);
+        }
+        .little-pl-two{
+            position: absolute;
+            top: 35px;
+            left: -5px;
+        }
+        .little-plt-left{
+            position: absolute;
+            top: 4px;
+            left: -5px;
+            width: 8px;
+            height: 35px;
+            background: #080A07;
+            border-radius: 10px;
+            -webkit-transform: rotate(45deg);
+        }
+        .little-plt-right{
+            position: absolute;
+            top: -14px;
+            left: 35px;
+            width: 8px;
+            height: 75px;
+            background: #080A07;
+            border-radius: 10px;
+            -webkit-transform: rotate(110deg);
+        }
+        .little-pl-three{
+            position: absolute;
+            top: 74px;
+            left: 40px;
+        }
+        .little-plth-left{
+            position: absolute;
+            top: 3px;
+            left: -45px;
+            width: 8px;
+            height: 25px;
+            background: #080A07;
+            border-radius: 10px;
+            -webkit-transform: rotate(35deg);
+        }
+        .little-plth-right{
+            position: absolute;
+            top: -14px;
+            left: -10px;
+            width: 8px;
+            height: 65px;
+            background: #080A07;
+            border-radius: 10px;
+            -webkit-transform: rotate(110deg);
+        }
+        .little-paws-right{
+            position: absolute;
+            top: -28px;
+            left: 403px;
+        }
+        .little-pr-one{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .little-pro-left{
+            position: absolute;
+            top: 0;
+            left: -3px;
+            width: 8px;
+            height: 80px;
+            background: #080A07;
+            border-radius: 10px;
+            -webkit-transform: rotate(50deg);
+        }
+        .little-pro-right{
+            position: absolute;
+            top: -3px;
+            left: 47px;
+            width: 8px;
+            height: 50px;
+            background: #080A07;
+            border-radius: 10px;
+            -webkit-transform: rotate(110deg);
+        }
+        .little-pr-two{
+            position: absolute;
+            top: 35px;
+            left: -5px;
+        }
+        .little-prt-left{
+            position: absolute;
+            top: 10px;
+            left: 12px;
+            width: 8px;
+            height: 65px;
+            background: #080A07;
+            border-radius: 10px;
+            -webkit-transform: rotate(45deg);
+        }
+        .little-prt-right{
+            position: absolute;
+            top: 8px;
+            left: 47px;
+            width: 8px;
+            height: 35px;
+            background: #080A07;
+            border-radius: 10px;
+            -webkit-transform: rotate(110deg);
+        }
+        .little-pr-three{
+            position: absolute;
+            top: 74px;
+            left: 40px;
+        }
+        .little-prth-left{
+            position: absolute;
+            top: 13px;
+            left: -30px;
+            width: 8px;
+            height: 65px;
+            background: #080A07;
+            border-radius: 10px;
+            -webkit-transform: rotate(35deg);
+        }
+        .little-prth-right{
+            position: absolute;
+            top: 7px;
+            left: 1px;
+            width: 8px;
+            height: 35px;
+            background: #080A07;
+            border-radius: 10px;
+            -webkit-transform: rotate(110deg);
+        }
+        .food{
+            position: absolute;
+            top: 350px;
+            left: 0;
+        }
+        .food-left{
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all .5s;
+            transform-origin: 124px 29px;
+        }
+
+        .food-l-lineone{
+            position: absolute;
+            top: 0;
+            left: 80px;
+            width: 8px;
+            height: 75px;
+            background: #080A07;
+            border-radius: 10px;
+            -webkit-transform: rotate(80deg);
+        }
+        .food-l-linetwo{
+            position: absolute;
+            top: 38px;
+            left: 50px;
+            width: 8px;
+            height: 35px;
+            background: #080A07;
+            border-radius: 10px;
+            -webkit-transform: rotate(-10deg);
+        }
+        .food-l-bood{
+            position: absolute;
+            top: 65px;
+            left: 15px;
+            width: 40px;
+            height: 20px;
+            border-radius: 50%;
+            border: 8px solid #080A07;
+            background: #41914A;
+            -webkit-transform: rotate(-30deg);
+        }
+        .food-right{
+            position: absolute;
+            top: -5px;
+            left: 400px;
+            transition: all .5s;
+            transform-origin: 6px 45px;
+        }
+        .food-r-lineone{
+            position: absolute;
+            top: 0;
+            left: 35px;
+            width: 8px;
+            height: 75px;
+            background: #080A07;
+            border-radius: 10px;
+            -webkit-transform: rotate(95deg);
+        }
+        .food-r-linetwo{
+            position: absolute;
+            top: 38px;
+            left: 70px;
+            width: 8px;
+            height: 35px;
+            background: #080A07;
+            border-radius: 10px;
+            -webkit-transform: rotate(-10deg);
+        }
+        .food-r-bood{
+            position: absolute;
+            top: 65px;
+            left: 70px;
+            width: 40px;
+            height: 20px;
+            border-radius: 50%;
+            border: 8px solid #080A07;
+            background: #41914A;
+            -webkit-transform: rotate(35deg);
+        }
+        .crab:hover .front-pl-left{
+            transform-origin: 57px 22px;
+            -webkit-transform: rotate(-80deg);
+        }
+        .crab:hover .front-pl-right{
+            transform-origin: 38px 21px;
+            -webkit-transform: rotate(100deg);
+        }
+        .crab:hover .front-pr-left{
+            transform-origin: 47px 9px;
+            -webkit-transform: rotate(66deg);
+        }
+        .crab:hover .front-pr-right{
+            transform-origin: 36px 28px;
+            -webkit-transform: rotate(-116deg);
+        }
+        .crab:hover .eye-left{
+            -webkit-transform: rotate(60deg);
+        }
+        .crab:hover .eye-right{
+            -webkit-transform: rotate(-60deg);
+        }
+        .crab:hover .food-left{
+            -webkit-transform: rotate(-30deg);
+        }
+        .crab:hover .food-right{
+            -webkit-transform: rotate(30deg);
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="crab">
+        &lt;!&ndash;前爪子&ndash;&gt;
+        <div class="front-paws">
+            <div class="front-paws-left">
+                <div class="front-pl-left"></div>
+                <div class="front-pl-right"></div>
+                <div class="front-pl-down"></div>
+            </div>
+            <div class="front-paws-right">
+                <div class="front-pr-left"></div>
+                <div class="front-pr-right"></div>
+                <div class="front-pr-down"></div>
+            </div>
+        </div>
+        &lt;!&ndash;眼睛&ndash;&gt;
+        <div class="eye">
+            <div class="eye-left">
+                <div class="eye-l-black"></div>
+                <div class="eye-l-white"></div>
+            </div>
+            <div class="eye-right">
+                <div class="eye-r-black"></div>
+                <div class="eye-r-white"></div>
+            </div>
+        </div>
+        &lt;!&ndash;肚子&ndash;&gt;
+        <div class="belly">
+            <div class="belly-con">
+                <div class="mouth"></div>
+            </div>
+        </div>
+        &lt;!&ndash;小爪子&ndash;&gt;
+        <div class="little-paws">
+            <div class="little-paws-left">
+                <div class="little-pl-one">
+                    <div class="little-plo-left"></div>
+                    <div class="little-plo-right"></div>
+                </div>
+                <div class="little-pl-two">
+                    <div class="little-plt-left"></div>
+                    <div class="little-plt-right"></div>
+                </div>
+                <div class="little-pl-three">
+                    <div class="little-plth-left"></div>
+                    <div class="little-plth-right"></div>
+                </div>
+            </div>
+            <div class="little-paws-right">
+                <div class="little-pr-one">
+                    <div class="little-pro-left"></div>
+                    <div class="little-pro-right"></div>
+                </div>
+                <div class="little-pr-two">
+                    <div class="little-prt-left"></div>
+                    <div class="little-prt-right"></div>
+                </div>
+                <div class="little-pr-three">
+                    <div class="little-prth-left"></div>
+                    <div class="little-prth-right"></div>
+                </div>
+            </div>
+        </div>
+        &lt;!&ndash;脚&ndash;&gt;
+        <div class="food">
+            <div class="food-left">
+                <div class="food-l-lineone"></div>
+                <div class="food-l-linetwo"></div>
+                <div class="food-l-bood"></div>
+            </div>
+            <div class="food-right">
+                <div class="food-r-lineone"></div>
+                <div class="food-r-linetwo"></div>
+                <div class="food-r-bood"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>-->
+
+<!--=====================宇宙===================================================-->
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color:black;
+            /*background: url("http://cdn.attach.qdfuns.com/notes/pics/201709/05/213229bze04e6nm66f6bhe.jpg");*/
+        }
+        ul{
+            width: 600px;
+            height: 600px;
+            margin:100px auto;
+            position: relative;
+        }
+        ul > li{
+            list-style: none;
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            border-radius: 50%;
+            box-sizing: border-box;
+            /*添加动画*/
+            animation: starAnimation linear infinite;
+        }
+        ul > li >span{
+            width: 12px;
+            height: 12px;
+            border-radius: 6px;
+            background-color: #fff741;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            /*margin-left: -6px;
+            margin-top: -6px;*/
+            animation: starAnimation 2s linear infinite;
+        }
+        ul > li >span > span{
+            width: 6px;
+            height: 6px;
+            border-radius: 3px;
+            background-color: blue;
+            position: absolute;
+            left: 3px;
+            top: -10px;
+        }
+        ul > li:nth-child(1){
+            width: 60px;
+            height: 60px;
+            background-color: #fff741;
+            box-shadow: 0px 0px 50px #fff741;
+        }
+        ul > li:nth-child(2){
+            width: 120px;
+            height: 120px;
+            border: 2px solid #394057;
+            animation-duration: 2s;
+        }
+        ul > li:nth-child(3){
+            width: 180px;
+            height: 180px;
+            border: 2px solid #394057;
+            animation-duration: 4s;
+        }
+        ul > li:nth-child(4){
+            width: 240px;
+            height: 240px;
+            border: 2px solid #394057;
+            animation-duration: 7s;
+            /*添加背景*/
+            background: url("http://cdn.attach.qdfuns.com/notes/pics/201709/05/213229dcbjy9kzwy5qqybh.png") no-repeat;
+            background-size: 240px 240px;
+        }
+        ul > li:nth-child(5){
+            width: 300px;
+            height: 300px;
+            border: 2px solid #394057;
+            animation-duration: 13s;
+        }
+        ul > li:nth-child(6){
+            width: 360px;
+            height: 360px;
+            border: 2px solid #394057;
+            animation-duration: 18s;
+        }
+        ul > li:nth-child(7){
+            width: 420px;
+            height: 420px;
+            border: 2px solid #394057;
+            animation-duration: 28s;
+        }
+        ul > li:nth-child(8){
+            width: 480px;
+            height: 480px;
+            border: 2px solid #394057;
+            animation-duration: 43s;
+        }
+        ul > li:nth-child(9){
+            width: 540px;
+            height: 540px;
+            border: 2px solid #394057;
+            animation-duration: 66s;
+        }
+        ul > li:nth-child(10){
+            width: 600px;
+            height: 600px;
+            border: 2px solid #394057;
+            animation-duration: 88s;
+        }
+
+        @keyframes starAnimation {
+            from{
+                transform: translate(-50%,-50%)  rotate(0deg);
+            }
+            to{
+                transform:translate(-50%,-50%)  rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span><span></span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+</ul>
+</body>
+</html>-->
+
+<!--=====================砖石===================================================-->
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        /* 钻石旋转
+         * 要实现这个钻石旋转: 首先需要明确这个钻石分为上下两个部分,上面包含六个正三角形,下面有6个倒三角形
+         * css实现正三角形：上右下左的方向 border-style: solid;border-color:transparent;border-width: 0 50px 170px 50px; border-bottom-color: rgba(255,0,0,0.5)
+         * css实现倒三角形：上右下左的方向 border-style: solid;border-color:transparent;border-width: 170px 50px 0 50px; border-top-color: rgba(255,0,0,0.5)
+         * 然后提供一个3D环境，给外层盒子添加 transform-style: preserve-3d;flat 所有的子元素在2D平面中;preserve-3D 所有的子元素 在3D 平面中
+         * 上面的三角形设置为绝对定位 absolute
+         * 使用css3的transform 三角形按角度转动 排列成钻石的上半部分，同理实现下半部分
+         * rotateY:沿着Y轴实现旋转,translateZ:沿着Z轴移动88px;沿着X轴 旋转31度
+         * 写一个动画tuoluo 0～50%～100%  沿着z轴旋转
+         * 实现动画的循环播放animation: tuoluo 3s linear infinite; */
+
+
+        /*@keysframes*/
+        .wrap{
+            width: 200px;
+            height: 400px;
+            margin: 30px auto;
+        }
+        @keyframes tuoluo{
+            0%{
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+            50%{
+                transform: rotateY(-180deg) rotateX(18deg);
+            }
+            100%{
+                transform: rotateY(-360deg) rotateX(0deg);
+            }
+        }
+        .wrap .tuoluo{
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            /* flat 所有的子元素在2D平面中*/
+            /* preserve-3D 所有的子元素 在3D 平面中*/
+            animation: tuoluo 3s linear infinite;
+        }
+        .wrap .tuoluo .tuoluo-top,
+        .wrap .tuoluo .tuoluo-bottom{
+            position: relative;
+            width: 100%;
+            height: 50%;
+        }
+        .tuoluo-top .face-top{
+            position: absolute;
+            top: 29px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: transparent;
+            border-width: 0 50px 170px 50px;
+            border-bottom-color: rgba(65,92,162,.5);
+            /*元素变形基点的位置*/
+            transform-origin: center bottom;
+        }
+        .tuoluo-top .face-top:nth-of-type(1){
+            transform: rotateY(0deg) translateZ(88px) rotateX(31deg);
+        }
+        .tuoluo-top .face-top:nth-of-type(2){
+            transform: rotateY(60deg) translateZ(88px) rotateX(31deg);
+        }
+        .tuoluo-top .face-top:nth-of-type(3){
+            transform: rotateY(120deg) translateZ(88px) rotateX(31deg);
+        }
+        .tuoluo-top .face-top:nth-of-type(4){
+            transform: rotateY(180deg) translateZ(88px) rotateX(31deg);
+        }
+        .tuoluo-top .face-top:nth-of-type(5){
+            transform: rotateY(240deg) translateZ(88px) rotateX(31deg);
+        }
+        .tuoluo-top .face-top:nth-of-type(6){
+            transform: rotateY(300deg) translateZ(88px) rotateX(31deg);
+        }
+        .tuoluo-bottom .face-bottom{
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: transparent;
+            border-width: 170px 50px 0 50px;
+            border-top-color: rgba(65,92,162,.5);
+            /*元素变形基点的位置*/
+            transform-origin: center top;
+        }
+        .tuoluo-bottom .face-bottom:nth-of-type(1){
+            transform: rotateY(0deg) translateZ(88px) rotateX(-31deg);
+        }
+        .tuoluo-bottom .face-bottom:nth-of-type(2){
+            transform: rotateY(60deg) translateZ(88px) rotateX(-31deg);
+        }
+        .tuoluo-bottom .face-bottom:nth-of-type(3){
+            transform: rotateY(120deg) translateZ(88px) rotateX(-31deg);
+        }
+        .tuoluo-bottom .face-bottom:nth-of-type(4){
+            transform: rotateY(180deg) translateZ(88px) rotateX(-31deg);
+        }
+        .tuoluo-bottom .face-bottom:nth-of-type(5){
+            transform: rotateY(240deg) translateZ(88px) rotateX(-31deg);
+        }
+        .tuoluo-bottom .face-bottom:nth-of-type(6){
+            transform: rotateY(300deg) translateZ(88px) rotateX(-31deg);
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="tuoluo">
+        <div class="tuoluo-top">
+            <div class="face-top"></div>
+            <div class="face-top"></div>
+            <div class="face-top"></div>
+            <div class="face-top"></div>
+            <div class="face-top"></div>
+            <div class="face-top"></div>
+        </div>
+        <div class="tuoluo-bottom">
+            <div class="face-bottom"></div>
+            <div class="face-bottom"></div>
+            <div class="face-bottom"></div>
+            <div class="face-bottom"></div>
+            <div class="face-bottom"></div>
+            <div class="face-bottom"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+-->
+
+<!--=====================旋转立方体===================================================-->
+<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>旋转立方体</title>
+</head>
+<style type="text/css">
+    @keyframes tt{
+        0%{transform:rotateX(0deg) rotateY(0deg);}
+        100%{transform:rotateX(360deg) rotateY(360deg);}
+    }
+    html{
+        width:100%;
+        height:100%;
+        background:linear-gradient(#fff 0%,#0F0 100%);
+    }
+    .wrap{
+        margin-top:250px;
+    }
+    .cube{
+        width:200px;
+        height:200px;
+        left:50%;
+        position:relative;
+        transform-style:preserve-3d;//3D
+    transform:rotatey(-45deg) rotatex(-45deg);
+        animation:tt 3s infinite linear;
+    }
+    .cube div{
+        width:200px;
+        height:200px;
+        background-color:#39f;
+        opacity:.4;
+        position:absolute;
+        color:#fff;
+        font-size:36px;
+        line-height:200px;
+        text-align:center;
+        transition:2s;
+    }
+    .cube .cubb{
+        width:100px;
+        height:100px;
+        background-color:#39f;
+        opacity:.8;
+        position:absolute;
+        color:#fff;
+        font-size:18px;
+        line-height:100px;
+        text-align:center;
+        transition:2s;
+        margin:50px;
+    }
+    .cube .cuba{
+        width:100px;
+        height:100px;
+        background-color:#000;
+        opacity:.8;
+        position:absolute;
+        color:#fff;
+        font-size:18px;
+        line-height:100px;
+        text-align:center;
+        transition:2s;
+        margin:50px;
+    }
+    .cube .out_front{
+        transform:translateZ(100px);
+    }
+    .cube .out_back{
+        transform:translateZ(-100px) rotateY(180deg);
+    }
+    .cube .out_left{
+        transform:translateX(-100px) rotateY(-90deg);
+    }
+    .cube .out_right{
+        transform:translateX(100px) rotateY(90deg);
+    }
+    .cube .out_top{
+        transform:translateY(-100px) rotateX(90deg);
+    }
+    .cube .out_bottom{
+        transform:translateY(100px) rotateX(-90deg);
+    }
+    .wrap:hover .out_front{
+        transform:translateZ(200px);
+    }
+    .wrap:hover .out_back{
+        transform:translateZ(-200px) rotateY(180deg);
+    }
+    .wrap:hover .out_left{
+        transform:translateX(-200px) rotateY(-90deg);
+    }
+    .wrap:hover .out_right{
+        transform:translateX(200px) rotateY(90deg);
+    }
+    .wrap:hover .out_top{
+        transform:translateY(-200px) rotateX(90deg);
+    }
+    .wrap:hover .out_bottom{
+        transform:translateY(200px) rotateX(-90deg);
+    }
+    .oout_front{
+        transform:translateZ(50px);
+    }
+    .oout_back{
+        transform:translateZ(-50px) rotateY(180deg);
+    }
+    .oout_left{
+        transform:translateX(-50px) rotateY(-90deg);
+    }
+    .oout_right{
+        transform:translateX(50px) rotateY(90deg);
+    }
+    .oout_top{
+        transform:translateY(-50px) rotateX(90deg);
+    }
+    .oout_bottom{
+        transform:translateY(50px) rotateX(-90deg);
+    }
+    .wrap:hover .oout_front{
+        transform:translateZ(100px);
+    }
+    .wrap:hover .oout_back{
+        transform:translateZ(-100px) rotateY(180deg);
+    }
+    .wrap:hover .oout_left{
+        transform:translateX(-100px) rotateY(-90deg);
+    }
+    .wrap:hover .oout_right{
+        transform:translateX(100px) rotateY(90deg);
+    }
+    .wrap:hover .oout_top{
+        transform:translateY(-100px) rotateX(90deg);
+    }
+    .wrap:hover .oout_bottom{
+        transform:translateY(100px) rotateX(-90deg);
+    }
+    .ooout_front{
+        transform:translateZ(25px);
+    }
+    .ooout_back{
+        transform:translateZ(-25px) rotateY(180deg);
+    }
+    .ooout_left{
+        transform:translateX(-25px) rotateY(-90deg);
+    }
+    .ooout_right{
+        transform:translateX(25px) rotateY(90deg);
+    }
+    .ooout_top{
+        transform:translateY(-25px) rotateX(90deg);
+    }
+    .ooout_bottom{
+        transform:translateY(25px) rotateX(-90deg);
+    }
+    .wrap:hover .ooout_front{
+        transform:translateZ(50px);
+    }
+    .wrap:hover .ooout_back{
+        transform:translateZ(-50px) rotateY(180deg);
+    }
+    .wrap:hover .ooout_left{
+        transform:translateX(-50px) rotateY(-90deg);
+    }
+    .wrap:hover .ooout_right{
+        transform:translateX(50px) rotateY(90deg);
+    }
+    .wrap:hover .ooout_top{
+        transform:translateY(-50px) rotateX(90deg);
+    }
+    .wrap:hover .ooout_bottom{
+        transform:translateY(50px) rotateX(-90deg);
+    }
+</style>
+<body>
+<div class="wrap">
+    <div class="cube">
+        <div class="out_front">前面</div>
+        <div class="out_back">后面</div>
+        <div class="out_left">左面</div>
+        <div class="out_right">右面</div>
+        <div class="out_top">上面</div>
+        <div class="out_bottom">下面</div>
+        <div class="oout_front cubb">前面</div>
+        <div class="oout_back cubb">后面</div>
+        <div class="oout_left cubb">左面</div>
+        <div class="oout_right cubb">右面</div>
+        <div class="oout_top cubb">上面</div>
+        <div class="ooout_bottom cuba">下面</div>
+        <div class="ooout_front cuba">前面</div>
+        <div class="ooout_back cuba">后面</div>
+        <div class="ooout_left cuba">左面</div>
+        <div class="ooout_right cuba">右面</div>
+        <div class="ooout_top cuba">上面</div>
+        <div class="ooout_bottom cuba">下面</div>
+
+    </div>
+</div>
+</body>
+</html>
+-->
+
+<!--=====================图像处理===================================================-->
+<!--
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style type="text/css">
+        p{float: left;text-align: center;margin: 0 5px 20px 0;color: #666;}
+        img{display: block;}
+        .grayscale {-webkit-filter: grayscale(1);}/*灰*/
+        .sepia {-webkit-filter: sepia(1);}/*褐色*/
+        .saturate {-webkit-filter: saturate(0.5);}/*饱和度*/
+        .hue-rotate {-webkit-filter: hue-rotate(90deg);}/*色相旋转*/
+        .invert {-webkit-filter: invert(1);}/*反色*/
+        .opacity {-webkit-filter: opacity(.2);}/*透明度*/
+        .brightness {-webkit-filter: brightness(.5);}/*亮度*/
+        .contrast {-webkit-filter: contrast(2);}/*对比度*/
+        .blur {-webkit-filter: blur(3px);}/*模糊度*/
+        .drop-shadow {-webkit-filter: drop-shadow(5px 5px 5px #ccc);}/*阴影*/
+        .blend{-webkit-filter: contrast(1.1) brightness(.95) saturate(1.9)}/*混合使用*/
+    </style>
+</head>
+
+<body>
+<p>原图<img class="normal" title="normal" width="128" height="128" alt="HTML5 Logo" src="http://sandbox.runjs.cn/uploads/rs/269/ikifpcmz/img.jpg" /></p>
+<p>灰<img class="grayscale" title="normal" width="128" height="128" alt="HTML5 Logo" src="http://sandbox.runjs.cn/uploads/rs/269/ikifpcmz/img.jpg" /></p>
+<p>褐色<img class="sepia" title="normal" width="128" height="128" alt="HTML5 Logo" src="http://sandbox.runjs.cn/uploads/rs/269/ikifpcmz/img.jpg" /></p>
+<p>饱和度<img class="saturate" title="normal" width="128" height="128" alt="HTML5 Logo" src="http://sandbox.runjs.cn/uploads/rs/269/ikifpcmz/img.jpg" /></p>
+<p>色相旋转<img class="hue-rotate " title="normal" width="128" height="128" alt="HTML5 Logo" src="http://sandbox.runjs.cn/uploads/rs/269/ikifpcmz/img.jpg" /></p>
+<p>反色<img class="invert" title="normal" width="128" height="128" alt="HTML5 Logo" src="http://sandbox.runjs.cn/uploads/rs/269/ikifpcmz/img.jpg" /></p>
+<p>透明度<img class="opacity" title="normal" width="128" height="128" alt="HTML5 Logo" src="http://sandbox.runjs.cn/uploads/rs/269/ikifpcmz/img.jpg" /></p>
+<p>亮度<img class="brightness" title="normal" width="128" height="128" alt="HTML5 Logo" src="http://sandbox.runjs.cn/uploads/rs/269/ikifpcmz/img.jpg" /></p>
+<p>对比度<img class="contrast" title="normal" width="128" height="128" alt="HTML5 Logo" src="http://sandbox.runjs.cn/uploads/rs/269/ikifpcmz/img.jpg" /></p>
+<p>模糊度<img class="blur" title="normal" width="128" height="128" alt="HTML5 Logo" src="http://sandbox.runjs.cn/uploads/rs/269/ikifpcmz/img.jpg" /></p>
+<p>阴影<img class="drop-shadow" title="normal" width="128" height="128" alt="HTML5 Logo" src="http://sandbox.runjs.cn/uploads/rs/269/ikifpcmz/img.jpg" /></p>
+<p>混合使用<img class="blend" title="normal" width="128" height="128" alt="HTML5 Logo" src="http://sandbox.runjs.cn/uploads/rs/269/ikifpcmz/img.jpg" /></p>
+</body>
+</html>-->
+
+<!--=====================8款纯CSS3搜索框===================================================-->
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8款纯CSS3搜索框</title>
+
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #494A5F;
+            font-weight: 500;
+            font-family: "Microsoft YaHei","宋体","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
+        }
+
+        #container {
+            width: 500px;
+            height: 820px;
+            margin: 0 auto;
+        }
+        div.search {padding: 30px 0;}
+
+        form {
+            position: relative;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        input, button {
+            border: none;
+            outline: none;
+        }
+
+        input {
+            width: 100%;
+            height: 42px;
+            padding-left: 13px;
+            padding-right:46px;
+        }
+
+        button {
+            height: 42px;
+            width: 42px;
+            cursor: pointer;
+            position: absolute;
+        }
+
+        /*搜索框1*/
+        .bar1 {background: #A3D0C3;}
+        .bar1 input {
+            border: 2px solid #7BA7AB;
+            border-radius: 5px;
+            background: #F9F0DA;
+            color: #9E9C9C;
+        }
+        .bar1 button {
+            top: 0;
+            right: 0;
+            background: #7BA7AB;
+            border-radius: 0 5px 5px 0;
+        }
+        .bar1 button:before {
+            content: "\f002";
+            font-family: FontAwesome;
+            font-size: 16px;
+            color: #F9F0DA;
+        }
+
+        /*搜索框2*/
+        .bar2 {background: #DABB52;}
+        .bar2 input, .bar2 button {
+            border-radius: 3px;
+        }
+        .bar2 input {
+            background: #F9F0DA;
+        }
+        .bar2 button {
+            height: 26px;
+            width: 26px;
+            top: 8px;
+            right: 8px;
+            background: #F15B42;
+        }
+        .bar2 button:before {
+            content: "\f105";
+            font-family: FontAwesome;
+            color: #F9F0DA;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /*搜索框3*/
+        .bar3 {background: #F9F0DA;}
+        .bar3 form {background: #A3D0C3;}
+        .bar3 input, .bar3 button {
+            background: transparent;
+        }
+        .bar3 button {
+            top: 0;
+            right: 0;
+        }
+        .bar3 button:before {
+            content: "\f002";
+            font-family: FontAwesome;
+            font-size: 16px;
+            color: #F9F0DA;
+        }
+
+        /*搜索框4*/
+        .bar4 {background: #F15B42;}
+        .bar4 form {
+            background: #F9F0DA;
+            border-bottom: 2px solid #BE290E;
+        }
+        .bar4 input, .bar4 button {
+            background: transparent;
+        }
+        .bar4 button {
+            top: 0;
+            right: 0;
+        }
+        .bar4 button:before {
+            content: "\f178";
+            font-family: FontAwesome;
+            font-size: 20px;
+            color: #be290e;
+        }
+
+        /*搜索框5*/
+        .bar5 {background: #683B4D;}
+        .bar5 input, .bar5 button {
+            background: transparent;
+        }
+        .bar5 input {
+            border: 2px solid #F9F0DA;
+        }
+        .bar5 button {
+            top: 0;
+            right: 0;
+        }
+        .bar5 button:before {
+            content: "\f002";
+            font-family: FontAwesome;
+            font-size: 16px;
+            color: #F9F0DA;
+        }
+        .bar5 input:focus {
+            border-color: #311c24
+        }
+
+        /*搜索框6*/
+        .bar6 {background: #F9F0DA;}
+        .bar6 input {
+            border: 2px solid #c5464a;
+            border-radius: 5px;
+            background: transparent;
+            top: 0;
+            right: 0;
+        }
+        .bar6 button {
+            background: #c5464a;
+            border-radius: 0 5px 5px 0;
+            width: 60px;
+            top: 0;
+            right: 0;
+        }
+        .bar6 button:before {
+            content: "搜索";
+            font-size: 13px;
+            color: #F9F0DA;
+        }
+
+
+        /*搜索框7*/
+        .bar7 {background: #7BA7AB;}
+        .bar7 form {
+            height: 42px;
+        }
+        .bar7 input {
+            width: 250px;
+            border-radius: 42px;
+            border: 2px solid #324B4E;
+            background: #F9F0DA;
+            transition: .3s linear;
+            float: right;
+        }
+        .bar7 input:focus {
+            width: 300px;
+        }
+        .bar7 button {
+            background: none;
+            top: -2px;
+            right: 0;
+        }
+        .bar7 button:before{
+            content: "\f002";
+            font-family: FontAwesome;
+            color: #324b4e;
+        }
+
+        /*搜索框8*/
+        .bar8 {background: #B46381;}
+        .bar8 form {
+            height: 42px;
+        }
+        .bar8 input {
+            width: 0;
+            padding: 0 42px 0 15px;
+            border-bottom: 2px solid transparent;
+            background: transparent;
+            transition: .3s linear;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+        }
+        .bar8 input:focus {
+            width: 300px;
+            z-index: 1;
+            border-bottom: 2px solid #F9F0DA;
+        }
+        .bar8 button {
+            background: #683B4D;
+            top: 0;
+            right: 0;
+        }
+        .bar8 button:before {
+            content: "\f002";
+            font-family: FontAwesome;
+            font-size: 16px;
+            color: #F9F0DA;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="search bar1">
+        <form>
+            <input type="text" placeholder="请输入您要搜索的内容...">
+            <button type="submit"></button>
+        </form>
+    </div>
+
+    <div class="search bar2">
+        <form>
+            <input type="text" placeholder="请输入您要搜索的内容...">
+            <button type="submit"></button>
+        </form>
+    </div>
+
+    <div class="search bar3">
+        <form>
+            <input type="text" placeholder="请输入您要搜索的内容...">
+            <button type="submit"></button>
+        </form>
+    </div>
+
+    <div class="search bar4">
+        <form>
+            <input type="text" placeholder="请输入您要搜索的内容...">
+            <button type="submit"></button>
+        </form>
+    </div>
+
+    <div class="search bar5">
+        <form>
+            <input type="text" placeholder="请输入您要搜索的内容...">
+            <button type="submit"></button>
+        </form>
+    </div>
+
+    <div class="search bar6">
+        <form>
+            <input type="text" placeholder="请输入您要搜索的内容...">
+            <button type="submit"></button>
+        </form>
+    </div>
+
+    <div class="search bar7">
+        <form>
+            <input type="text" placeholder="请输入您要搜索的内容...">
+            <button type="submit"></button>
+        </form>
+    </div>
+
+    <div class="search bar8">
+        <form>
+            <input type="text" placeholder="请输入您要搜索的内容...">
+            <button type="submit"></button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+-->
+

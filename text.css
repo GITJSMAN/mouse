@@ -1,0 +1,231 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.wrapper{
+    width: 100%;
+    height: 400px;
+    /*background-color: #0086b3;*/
+}
+
+          /*第一行*/
+/*第一张图片*/
+.Bgimg1{
+    width: 450px;
+    height: 400px;
+    position: relative;
+    background-image: url("img/lanrenzhijia1.jpg");
+    background-position: -50px;
+    transition:all .3s linear;
+    float: left;
+}
+.mask1{
+    width: 450px;
+    height: 400px;
+    position: absolute;
+    /*background: rgba(0,0,0,.4);*/
+    background: black;
+    opacity: 0.4;
+    transition: all .3s  linear;
+}
+.text1{
+    /*outline: 1px solid red;*/
+    width: 300px;
+    height: 100px;
+    /*position: relative;*/
+    margin-top: 260px;
+    margin-left: 50px;
+    text-transform: uppercase;
+    color: white;
+    transition: all .4s linear;
+}
+.text1 h1{
+    font-size: 25px;
+    font-style: normal;
+    transition: all .4s linear;
+    margin-top: 20px;
+}
+.text1 p{
+    font-size: 14px;
+    opacity: 0;
+    transition: all .4s linear;
+}
+.Bgimg1:hover{
+    cursor: pointer;
+    background-position: 0;
+}
+.Bgimg1 .mask1:hover{
+    opacity: 0;
+}
+.Bgimg1 .mask1:hover+.text1{
+    margin-top: 220px;
+}
+.Bgimg1 .mask1:hover+.text1 p{
+    opacity: .8;
+}
+
+/*第二张图片*/
+.Bgimg2{
+    width: 450px;
+    height: 400px;
+    background-image: url("img/lanrenzhijia2.jpg");
+    position: relative;
+    float: left;
+}
+.mask2{
+    width: 450px;
+    height: 400px;
+    position: absolute;
+    background-color: #3c4a50;
+    opacity: .3;
+    transition: all .4s linear;
+}
+.text2{
+    /*outline: 1px solid red;*/
+    width: 450px;
+    height: 400px;
+    text-align: center;
+    position:absolute;
+}
+.text2 h1{
+    margin-top: 125px;
+    font-size: 30px;
+    font-weight: 400;
+    transition: all .4s linear;
+    opacity: .8;
+}
+.text2 p{
+    margin-top: 180px;
+    color: white;
+    visibility: hidden;
+    transition: all .4s linear;
+}
+.Bgimg2:hover{
+    cursor: pointer;
+}
+.Bgimg2:hover .mask2{
+    opacity: .6;
+    transition: all .4s linear;
+}
+.text2:hover h1{
+    margin-top: 100px;
+    color: white;
+}
+.text2:hover p{
+    visibility: visible;
+    margin-top: 170px;
+}
+/*<!--第三张图片-->*/
+.Bdimg3{
+    width: 449px;
+    height: 400px;
+    background-image: url("img/lanrenzhijia7.jpg");
+    position: relative;
+    float: left;
+}
+.mask3{
+    width: 449px;
+    height: 400px;
+    position: absolute;
+    background-color: #484c61;
+    opacity: 0;
+    transition: all .4s linear;
+}
+.whiteBg{
+    width: 449px;
+    height: 10px;
+    background-color: white;
+    position: absolute;
+    top: 390px;
+    opacity: 0;
+    /*visibility: hidden;*/
+    transition: all .3s linear;
+    /*outline: 1px solid red;*/
+}
+.text3{
+    /*outline: 1px solid red;*/
+    width: 350px;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    margin-top: 300px;
+    margin-left: 40px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 25px;
+    font-weight: 400;
+    font-style: normal;
+    transition: all .3s linear;
+}
+.text3 span{
+    /*visibility: hidden;*/
+    opacity: 0;
+    transition: all .3s linear;
+}
+.Bdimg3:hover{
+    cursor: pointer;
+}
+.Bdimg3:hover .mask3{
+    opacity: .5;
+    margin-bottom: 10px;
+}
+.Bdimg3:hover .whiteBg{
+     /*visibility: visible;*/
+    opacity: 1;
+}
+.Bdimg3 .mask3:hover+.text3{
+    margin-top: 320px;
+}
+.Bdimg3 .mask3:hover+.text3 span{
+    opacity: 1;
+    /*visibility: visible;*/
+}
+
+           /*第二行*/
+.Bdimg4{
+    width: 450px;
+    height: 400px;
+    background-image: url("img/lanrenzhijia4.jpg");
+    background-position: 0 -20px;
+    position:relative;
+    float: left;
+    transition: all .2s linear;
+}
+.mask4{
+    width: 450px;
+    height: 400px;
+    background-color: #404040;
+    position: absolute;
+    opacity: .2;
+    transition: all .4s linear;
+}
+.text4{
+    outline: 1px solid red;
+    width: 300px;
+    height: 90px;
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 75px;
+    color: white;
+    text-align: center;
+}
+/*.text4 h1{*/
+    /*font-size: 25px;*/
+/*}*/
+.text4 p{
+    opacity: 0;
+    transition: all .2s linear;
+}
+.Bdimg4:hover{
+    cursor: pointer;
+    background-position: 0;
+}
+.mask4:hover{
+    opacity: .4;
+}
+.text4:hover{
+    margin-top: 100px;
+}
+.text4:hover p{
+    opacity: .9;
+}
